@@ -95,7 +95,7 @@ async def _(event):
         await event.edit(f"Removed Ai From User")
 
 CmdHelp("chatbot").add_command(
-   'adai', '<reply to a user message>, 'add ai bot'
+   'adai', '<reply to a user message>', 'add ai bot'
 ).add_command(
    'rmvai', '<reply to same user>', 'remove ai'
 ).add_info(
