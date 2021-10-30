@@ -1,23 +1,3 @@
-Skip to content
-LEGEND-OS
-/
-LegendBot-Addons
-Public
-forked from LEGENDS-OP/LegendBot-Addons
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-LegendBot-Addons/got_memes.py
-@LEGEND-OS
-LEGEND-OS Add files via upload
- 1 contributor
-159 lines (81 sloc)  5.61 KB
-
 
 from telethon import events
 
