@@ -90,6 +90,33 @@ async def assistants():
                     LOGS.warning(str(e))
     else:
         print("Addons Not Loading")
+
+spaam = os.environ.get("SPAM", None)
+async def botspam():
+    if spam == "ON":
+        extra_repo = "https://github.com/LEGEND-OS/BOTSPAM"
+        try:
+            os.system(f"git clone {extra_repo}")  
+        except BaseException:
+            pass
+        import glob
+        LOGS.info("Loading Bot Spam Plugin")
+        path = "assistant/*.py"
+        files = glob.glob(path)
+        for name in files:
+            with open(name) as ex:
+                path2 = Path(ex.name)
+                shortname = path2.stem
+                try:
+                    start_assistant(shortname.replace(".py", ""))
+                    if not shortname.startswith("__") or shortname.startswith("_"):
+                        LOGS.info(f"[LEGEND-BOT 3.0] - BOT ASSISTANT -  🤴Installed🤴 - {shortname}")
+                except Exception as e:
+                    LOGS.warning(f"[LEGEND-BOT 3.0] - BOT ASSISTANT - ⚠️⚡ERROR⚡⚠️ - {shortname}")
+                    LOGS.warning(str(e))
+    else:
+        print("Addons Not Loading")
+
 addon = os.environ.get("EXTRA_PLUGIN", None)             
 async def addons():
     if addon == "ON":
@@ -161,7 +188,7 @@ bot.loop.run_until_complete(module())
 bot.loop.run_until_complete(addons())
 bot.loop.run_until_complete(abuses())
 bot.loop.run_until_complete(assistants())
-
+bot.loop.run_until_complete(botspam())
 
 print(f"""♥️🇮🇳♥️⚜♥️
 ╔════❰LEGENDBOT❱═❍⊱❁۪۪
