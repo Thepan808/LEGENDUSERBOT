@@ -100,14 +100,14 @@ async def botspam():
             pass
         import glob
         LOGS.info("Loading Bot Spam Plugin")
-        path = "assistant/*.py"
+        path = "BOTSPAM/*.py"
         files = glob.glob(path)
         for name in files:
             with open(name) as ex:
                 path2 = Path(ex.name)
                 shortname = path2.stem
                 try:
-                    start_assistant(shortname.replace(".py", ""))
+                    bot_spam(shortname.replace(".py", ""))
                     if not shortname.startswith("__") or shortname.startswith("_"):
                         LOGS.info(f"[LEGEND-BOT 3.0] - BOT ASSISTANT -  🤴Installed🤴 - {shortname}")
                 except Exception as e:
