@@ -4,24 +4,19 @@ import asyncio
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
-
-try:
-  from userbot import bot 
-except:
-  pass
-
+from userbot import bot
 
 APP_ID = os.environ.get("APP_ID", None)
 API_HASH = os.environ.get("API_HASH", None)
-BOT_TOKEN2 = os.environ.get("BOT_TOKEN2", None)
-BOT_TOKEN3 = os.environ.get("BOT_TOKEN3", None)
-BOT_TOKEN4 = os.environ.get("BOT_TOKEN4", None)
-BOT_TOKEN5 = os.environ.get("BOT_TOKEN5", None)
-BOT_TOKEN6 = os.environ.get("BOT_TOKEN6", None)
-BOT_TOKEN7 = os.environ.get("BOT_TOKEN7", None)
-BOT_TOKEN8 = os.environ.get("BOT_TOKEN8", None)
-BOT_TOKEN9 = os.environ.get("BOT_TOKEN9", None)
-BOT_TOKEN10 = os.environ.get("BOT_TOKEN10", None)
+BOT_TOKEN2 = os.environ.get("BOTTOKEN2", None)
+BOT_TOKEN3 = os.environ.get("BOTTOKEN3", None)
+BOT_TOKEN4 = os.environ.get("BOTTOKEN4", None)
+BOT_TOKEN5 = os.environ.get("BOTTOKEN5", None)
+BOT_TOKEN6 = os.environ.get("BOTTOKEN6", None)
+BOT_TOKEN7 = os.environ.get("BOTTOKEN7", None)
+BOT_TOKEN8 = os.environ.get("BOTTOKEN8", None)
+BOT_TOKEN9 = os.environ.get("BOTTOKEN9", None)
+BOT_TOKEN10 = os.environ.get("BOTTOKEN10", None)
 
 bot2 = TelegramClient(
     session="Legend-Bot",
