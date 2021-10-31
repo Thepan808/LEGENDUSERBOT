@@ -1,4 +1,4 @@
-from userbot import bot
+from userbot import bot, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10
 from sys import argv
 import sys
 import os
