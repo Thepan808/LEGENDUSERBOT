@@ -126,7 +126,8 @@ SUDO_LIST = {}
 from userbot.helpers import *
 from userbot.cmdhelp import CmdHelp
 
-
+APP_ID = os.environ.get("APP_ID", None)
+API_HASH = os.environ.get("API_HASH", None)
 BOT_TOKEN2 = os.environ.get("BOT_TOKEN2", None)
 BOT_TOKEN3 = os.environ.get("BOT_TOKEN3", None)
 BOT_TOKEN4 = os.environ.get("BOT_TOKEN4", None)
