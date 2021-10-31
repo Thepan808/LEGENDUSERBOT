@@ -6,22 +6,19 @@ from telethon import TelegramClient
 from var import Var
 from userbot.Config import Config
 from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
-from userbot.utils import load_module, start_assistant, load_addons, load_abuse 
+from userbot.utils import load_module, start_assistant, load_addons, load_abuse, bot_spam
 from userbot.utils import *
 from userbot import LOAD_PLUG, LOGS, LEGENDversion
 from pathlib import Path
 import asyncio
 import glob
 import telethon.utils
-os.system("pip install -U telethon")
 
 l2= Config.SUDO_COMMAND_HAND_LER
 LEGEND_PIC = "https://te.legra.ph/file/a3e358b1331d6ef9a6299.mp4"
 l1 = Config.COMMAND_HAND_LER
 import os
-os.system("pip install safety-ub")
-from safety import StartSafety as safe
-            
+from safety import StartSafety as safe           
 async def add_bot(bot_token):
     try:
         await bot.start(bot_token)
@@ -90,6 +87,33 @@ async def assistants():
                     LOGS.warning(str(e))
     else:
         print("Addons Not Loading")
+
+spam = os.environ.get("SPAM", None)
+async def botspam():
+    if spam == "ON":
+        extra_repo = "https://github.com/LEGEND-OS/BOTSPAM"
+        try:
+            os.system(f"git clone {extra_repo}")  
+        except BaseException:
+            pass
+        import glob
+        LOGS.info("Loading Bot Spam Plugin")
+        path = "BOTSPAM/*.py"
+        files = glob.glob(path)
+        for name in files:
+            with open(name) as ex:
+                path2 = Path(ex.name)
+                shortname = path2.stem
+                try:
+                    bot_spam(shortname.replace(".py", ""))
+                    if not shortname.startswith("__") or shortname.startswith("_"):
+                        LOGS.info(f"[LEGEND-BOT 3.0] - BOT ASSISTANT -  🤴Installed🤴 - {shortname}")
+                except Exception as e:
+                    LOGS.warning(f"[LEGEND-BOT 3.0] - BOT ASSISTANT - ⚠️⚡ERROR⚡⚠️ - {shortname}")
+                    LOGS.warning(str(e))
+    else:
+        print("Addons Not Loading")
+
 addon = os.environ.get("EXTRA_PLUGIN", None)             
 async def addons():
     if addon == "ON":
@@ -161,7 +185,7 @@ bot.loop.run_until_complete(module())
 bot.loop.run_until_complete(addons())
 bot.loop.run_until_complete(abuses())
 bot.loop.run_until_complete(assistants())
-
+bot.loop.run_until_complete(botspam())
 
 print(f"""♥️🇮🇳♥️⚜♥️
 ╔════❰LEGENDBOT❱═❍⊱❁۪۪

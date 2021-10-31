@@ -167,6 +167,34 @@ def load_module(shortname):
         sys.modules["userbot.plugins." + shortname] = mod
         LOGS.info("🔥⚡Lêɠêɳ̃dẞø†⚡🔥 ~ " + shortname)
 
+def bot_spam(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import importlib
+        import sys
+        from pathlib import Path
+        path = Path(f"BOTSPAM/{shortname}.py")
+        name = "BOTSPAM.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print("Starting Your SPAM Bot.")
+        print("Assistant Sucessfully imported " + shortname)
+    else:
+        import importlib
+        import sys
+        from pathlib import Path
+        path = Path(f"BOTSPAM/{shortname}.py")
+        name = "BOTSPAM.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.tgbot = bot.tgbot
+        spec.loader.exec_module(mod)
+        sys.modules["BOTSPAM" + shortname] = mod
+        print("[🗒BOTSPAM🗒 3.0] ~ HAS ~ 💞Installed💞 ~" + shortname)  
+
+
 def start_assistant(shortname):
     if shortname.startswith("__"):
         pass
@@ -174,7 +202,6 @@ def start_assistant(shortname):
         import importlib
         import sys
         from pathlib import Path
-
         path = Path(f"assistant/{shortname}.py")
         name = "assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -186,7 +213,6 @@ def start_assistant(shortname):
         import importlib
         import sys
         from pathlib import Path
-
         path = Path(f"assistant/{shortname}.py")
         name = "assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -194,9 +220,8 @@ def start_assistant(shortname):
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules["assistant" + shortname] = mod
-        print("[🤴Assistant🤴 3.0] ~ HAS ~ 💞Installed💞 ~" + shortname)  
+        print("[🤴Assistant🤴 3.0] ~ HAS ~ 💞Installed💞 ~" + shortname)     
 
-   
 def load_addons(shortname):
     if shortname.startswith("__"):
         pass
@@ -285,7 +310,7 @@ def load_abuse(shortname):
         sys.modules["uniborg.util"] = userbot.utils
         mod.Config = Config
         mod.borg = bot
-        mod.LEGENDBOT = bot
+       # mod.LEGENDBOT = bot
         mod.edit_or_reply = edit_or_reply
         mod.delete_LEGEND = delete_LEGEND
         mod.eod = delete_LEGEND
