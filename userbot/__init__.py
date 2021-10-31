@@ -40,16 +40,6 @@ LegendBot = TelegramClient(
     connection_retries=None,
 ).start(bot_token=Config.BOT_TOKEN)
 
-BOT_TOKEN2 = os.environ.get("BOT_TOKEN2", None)
-bot2 = TelegramClient(
-    session="Legend-Bot",
-    api_id=Config.APP_ID,
-    api_hash=Config.API_HASH,
-    connection=ConnectionTcpAbridged,
-    auto_reconnect=True,
-    connection_retries=None,
-).start(bot_token=BOT_TOKEN2)
-
 bot = kbot = Legend
 tbot = LegendBot
 
