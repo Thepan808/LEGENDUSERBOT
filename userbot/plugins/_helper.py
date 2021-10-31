@@ -157,7 +157,7 @@ async def _(event):
                 eleventh = await conv.send_message(name)
                 twelveth = await conv.get_response()
                 thirdteen = await conv.send_message("/setdescription")
-                fourthteen = await conv.get_response()
+                fourteen = await conv.get_response()
                 fiveteen = await conv.send_message(botname)
                 sixteen = await conv.get_response()
                 seventeen = await conv.send_message(description)
