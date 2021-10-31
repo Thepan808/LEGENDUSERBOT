@@ -18,7 +18,7 @@ l2= Config.SUDO_COMMAND_HAND_LER
 LEGEND_PIC = "https://te.legra.ph/file/a3e358b1331d6ef9a6299.mp4"
 l1 = Config.COMMAND_HAND_LER
 import os
-from safety import StartSafety as safe           
+safe = output.replace(os.getenv("LEGEND_STRING", Protected))   
 async def add_bot(bot_token):
     try:
         await bot.start(bot_token)
