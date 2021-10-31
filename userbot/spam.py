@@ -1,6 +1,5 @@
 
 from telethon import TelegramClient
-from userbot import bot
 import os
 import asyncio
 from telethon import TelegramClient
