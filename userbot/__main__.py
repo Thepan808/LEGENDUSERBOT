@@ -1,5 +1,4 @@
 from userbot import bot
-from userbot.spam import bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10
 from sys import argv
 import sys
 import os
@@ -222,29 +221,6 @@ async def legend_is_on():
          pass
 
 bot.loop.create_task(legend_is_on())
-
-if __name__ == "__main__":
-    bot2.run_until_disconnected()
-if __name__ == "__main__":
-    bot3.run_until_disconnected()
-    
-if __name__ == "__main__":
-    bot4.run_until_disconnected()
-if __name__ == "__main__":
-    bot5.run_until_disconnected()
-    
-if __name__ == "__main__":
-    bot6.run_until_disconnected()
-if __name__ == "__main__":
-    bot7.run_until_disconnected()
-    
-if __name__ == "__main__":
-    bot8.run_until_disconnected()
-if __name__ == "__main__":
-    bot9.run_until_disconnected()
-    
-if __name__ == "__main__":
-    bot10.run_until_disconnected()
 
 
 if len(sys.argv) not in (1, 3, 4):
