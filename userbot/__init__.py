@@ -40,7 +40,6 @@ LegendBot = TelegramClient(
     connection_retries=None,
 ).start(bot_token=Config.BOT_TOKEN)
 
-
 bot = kbot = Legend
 tbot = LegendBot
 

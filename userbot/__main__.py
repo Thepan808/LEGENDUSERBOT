@@ -18,7 +18,7 @@ l2= Config.SUDO_COMMAND_HAND_LER
 LEGEND_PIC = "https://te.legra.ph/file/a3e358b1331d6ef9a6299.mp4"
 l1 = Config.COMMAND_HAND_LER
 import os
-from safety import StartSafety as safe           
+
 async def add_bot(bot_token):
     try:
         await bot.start(bot_token)
@@ -199,7 +199,7 @@ print(f"""♥️🇮🇳♥️⚜♥️
 
 async def legend_is_on():
     try:
-        safe()
+        
         if Config.LOGGER_ID != 0:
             await bot.send_file(
                 Config.LOGGER_ID,
@@ -221,6 +221,8 @@ async def legend_is_on():
          pass
 
 bot.loop.create_task(legend_is_on())
+
+
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
 else:
