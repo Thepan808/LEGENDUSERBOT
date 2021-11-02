@@ -39,6 +39,7 @@ DateTime
 deep_translator
 dnspython
 emoji==0.6.0
+fastapi
 fonttools
 faker
 glitch_this
@@ -67,6 +68,7 @@ langdetect
 lyricsgenius
 lxml
 lottie
+multiutility
 nekos.py
 numpy
 oauth2client
@@ -76,6 +78,7 @@ PyGithub
 pygments
 pymediainfo
 patool
+pampyio
 psycopg2
 psycopg2-binary
 PyPDF2
